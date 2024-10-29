@@ -15,7 +15,7 @@ module.exports = function (app) {
 
   app.put("/api/car/:id", [authJwt.verifyToken, authJwt.isAdmin], upload.single("car_img"), controller.updateCar); //update car
 
-  app.get("/api/car", [authJwt.verifyToken], controller.getCar); //get car
+  app.get("/api/car", controller.getCar); //get car
 
   app.delete("/api/car/:id", [authJwt.verifyToken, authJwt.isAdmin], controller.deleteCar); //delete car
 
